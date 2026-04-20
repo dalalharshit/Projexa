@@ -1,0 +1,333 @@
+/* Custom Theme Variables */
+:root {
+    --primary-color: #4f46e5; /* Indigo */
+    --primary-dark: #4338ca;
+    --secondary-color: #64748b; /* Slate */
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --sidebar-width: 280px;
+    --header-height: 64px;
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f1f5f9 0%,
+        #e2e8f0 50%,
+        #f1f5f9 100%
+    );
+    background-size: 1000px 100%;
+    animation: skeleton-shimmer 2s infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease-in-out;
+}
+
+/* Modal Backdrop */
+#modal-container {
+    pointer-events: none;
+}
+
+#modal-container > * {
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    animation: fadeIn 0.2s ease-in-out;
+    pointer-events: auto;
+}
+
+.modal-content {
+    animation: slideInRight 0.3s ease-in-out;
+}
+
+/* Toast Notification */
+#toast-container {
+    pointer-events: none;
+}
+
+#toast-container * {
+    pointer-events: auto;
+}
+
+.toast {
+    animation: slideInRight 0.3s ease-in-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Transitions */
+button, input, select, textarea {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Chat Bubble Styling */
+.chat-bubble-incoming {
+    background-color: #e2e8f0;
+    border-bottom-left-radius: 0;
+}
+
+.chat-bubble-outgoing {
+    background-color: #4f46e5;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+/* Pulse Animation for Active Status */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Table Hover Effect */
+tbody tr {
+    transition: background-color 0.15s ease-in-out;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Badge Styling */
+.badge-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-info {
+    background-color: #dbeafe;
+    color: #0c2d6b;
+}
+
+/* Input Styling */
+input, select, textarea {
+    font-size: 16px;
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    z-index: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #111827;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    background-color: #ffffff;
+}
+
+/* Input Placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Checkbox and Radio */
+input[type="checkbox"],
+input[type="radio"] {
+    appearance: auto;
+    -webkit-appearance: auto;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0;
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 40;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Gradient Backgrounds */
+.gradient-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+.gradient-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* App Container */
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+/* Ensure body and html allow interactions */
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Login Form */
+#login-form {
+    z-index: 1;
+    position: relative;
+}
+
+#login-form input {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+}
+
+#login-form input:active,
+#login-form input:focus {
+    outline: none !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+}
